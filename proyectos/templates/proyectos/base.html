@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="{% static 'img/indice.ico' %}" type="image/ico" />
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+    <title>SSPA |  
+      {% block titulo %}
+        Home
+      {% endblock %}
+    </title>
+    <link href="{% static 'template//vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="{% static 'template/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'template/vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    
+    <!-- bootstrap-progressbar -->
+    <link href="{% static 'template/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{% static 'template/vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{% static 'template/vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{% static 'template/build/css/custom.min.css' %}" rel="stylesheet">
+    <!-- Custom Select bootstrap  -->
+    <style>
+          .dropdown-menu > li > a{
+              color: black  !important;
+              font-weight: 600;
+          }
+          @media only screen and (max-width: 600px) {
+              .dropdown-menu {
+                list-style: none outside none;
+                text-shadow: none;
+                width: 100%;
+            }
+
+            .dropdown-header {
+              font-size: 10px;
+              color: black;
+              font-weight: 600;
+              background: wheat;
+            }
+          }
+
+          .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+              color: black;
+          }
+
+          .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+              color: black;
+              background: white;
+              border: 1px solid black;
+          }
+
+          .dropdown-header {
+              color: black;
+              font-weight: 600;
+              background: wheat;
+          }
+    </style>
+
+    {% block css %}
+    {% endblock %}
+
+  </head>
+
+  <body class="nav-md" style="background-color: white;">
+
+    <div class="container body" style="background-color: white;">
+      <div class="main_container">
+        <div class="col-md-3 left_col menu_fixed" style="overflow: visible;">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="" class="site_title">
+                
+                <!--<i style="border: 0;" class="fa fa-desktop"></i>--> <span>SISEPA</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              
+              <div class="profile_pic">
+                
+                <img src="{% static 'img.jpg' %}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Bienvenido,</span>
+                <h2>Varela</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'HomePlanes' %}">Inicio</a></li>
+
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="menu_section">
+
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <nav class="nav navbar-nav">
+              <ul class=" navbar-right">
+
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                  
+                  <img src="{% static 'img/logoblanco.png' %}" style="height: 20px;">
+
+                </li>
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          {% block cuerpo %}
+
+          {% endblock %}
+
+
+
+          <!-- /top tiles -->
+
+
+          <br />
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <br><br>
+          
+
+          <center>
+            <img height="40px" src="{% static 'img/logo.png' %}">
+          </center>
+          <div class="pull-right">
+            SSPA V. 1.0
+          </div>
+          <div class="clearfix"></div>
+
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'template/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'template/vendors/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'template/vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'template/vendors/nprogress/nprogress.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{% static 'template/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{% static 'template/vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- DateJS -->
+    <script src="{% static 'template/vendors/DateJS/build/date.js' %}"></script>
+    <!-- JQVMap -->
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static 'template/vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'template/vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <!-- jQuery custom content scroller -->
+    <link href="{% static 'template/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css' %}" rel="stylesheet"/>
+    <!-- jQuery custom content scroller -->
+    <script src="{% static 'template/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>>
+
+    <!-- Latest compiled and sweetalert JavaScript -->
+    <script src="{% static 'js/notify.js' %}"></script>
+    <!-- Latest compiled and sweetalert JavaScript -->
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'template/build/js/custom.js' %}?id=3"></script>
+
+    {% block javascript %}
+ 
+
+    {% endblock %}
+
+</script>
+<form method="POST">
+  {% csrf_token %}
+</form>
+
+  </body>
+</html>
